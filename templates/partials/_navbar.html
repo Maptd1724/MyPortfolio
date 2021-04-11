@@ -1,0 +1,65 @@
+{% load static %}
+<div class="content-block" id="header">
+    <div id="overlay-1">
+        <header id="site-header" class="clearfix">
+            <div class="pull-left">
+                <h1><a href="#">Full Stack Developer</a></h1>
+            </div>
+            <div class="pull-right">
+                <nav class="navbar site-nav" role="navigation">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <i class="fa fa-bars fa-2x"></i>
+                        </button>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li
+                                {% if '/' == request.path %}
+                                    class="nav-item mr-3"
+                                {% else %}
+                                    class="nav-item mr-3"
+                                {% endif %}
+                            > 
+                                <a class="nav-link" href="{% url 'index' %}"><i class="fa fa-home"></i> <span>Home</span></a>
+                            </li>
+                            <li
+                                {% if 'portfolio' in request.path %}
+                                    class="nav-item active mr-3"
+                                {% else %}
+                                    class="nav-item mr-3"
+                                {% endif %}
+                            >
+                                <a class="nav-link" href="{% url 'works' %}"><i class="fa fa-bookmark"></i> Portfolio</a></li>
+                            <li
+                                {% if 'about' in request.path %}
+                                    class="nav-item active  mr-3"
+                                {% else %}
+                                    class="nav-item mr-3"
+                                {% endif %}
+                            >
+                                <a href="{% url 'about' %}"><i class="fa fa-bullhorn"></i> About</a></li>
+                            <li
+                            {% if 'skills' in request.path %}
+                                    class="nav-item active  mr-3"
+                                {% else %}
+                                    class="nav-item mr-3"
+                                {% endif %}
+                            >
+                                <a href="{% url 'skills' %}"><i class="fa fa-thumbs-up"></i> Skills</a></li>
+                            <li
+                            {% if 'contact' in request.path %}
+                                    class="nav-item active mr-3"
+                                {% else %}
+                                    class="nav-item mr-3"
+                                {% endif %}
+                            >
+                                <a href="#contact"><i class="fa fa-phone-square"></i> Contact</a></li>
+                        </ul>
+                    </div>  <!-- /.navbar-collapse -->
+                </nav>
+            </div>
+        </header>	<!-- site-header -->

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="content-block text-center" id="portfolio">
+    <header class="block-heading cleafix">
+        <h1>My Skills</h1>
+        <!-- <p>Take a look at some of my recent products</p> -->
+    </header>
+    <div class="portfolio-works wow fadeIn" data-wow-duration="2s">
+
+        <!-- Filter Button Start -->
+        <div id="portfolio-filter" class="portfolio-filter-btn-group">    
+    <div class="isotope portfolio-items">
+        {% for skill in skills %}
+        <div class="element-item grid">
+            <div class="effect-zoe">
+                <img class="img-responsive" alt="Portfolio" src="{{ skill.photo.url }}" alt="" height="100%" width="100%">
+                
+                <figcaption>
+                    <h2 class="hidden-xs">Creative <span>Mary</span></h2>
+                    <p class="icon-links">
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </p>
+                </figcaption>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock %}

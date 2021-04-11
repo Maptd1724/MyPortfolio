@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div id="services" class="content-block">
+    <div id="numbers" class="parallax">
+        <div class="overlay">
+        
+            <!-- title -->
+            <div class="container-fluid numbers-title">
+                <div class="container">
+                    <img src="{% static 'bg/number1.gif' %}" alt=""></div>
+                    <div class="row block-heading">
+                        <h1>Some Cool Facts About Me</h1>
+                        
+                    </div>
+                
+            </div>
+            <div class="container-fluid">
+                <!-- number list -->
+                <ul class="numbersList">
+                    <li class="col-md-2 col-sm-4 col-xs-6">
+                        <h4> I'm originally from the Philippines and became an Israeli citizen. </h4>
+                    
+                    </li>
+                    <li class="col-md-2 col-sm-4 col-xs-6">
+                        <h4> I speak four different languages. 
+                            *Tagalog the official Filipino language.
+                            *Ilocano the local language of the area I came from.
+                            *English.
+                            *Basic hebrew.</h4>
+                        
+                    </li>
+                    <li class="col-md-2 col-sm-4 col-xs-6">
+                        <h4>At the age of 17, I already studied Nursing in the University. When I graduated at age of 21, I worked at the Philippines Red Cross and many other various Nursing field.</h4>
+                       
+                    </li>
+                    <li class="col-md-2 col-sm-4 col-xs-6">
+                        <h4> I studied to be a Full Stack Developer at Developers Institute Learning in a three months bootcamp. I learned from scratch to write code. All thanks to my high motivation to succeed, learn and develop my self.</h4>
+                        
+                    </li>
+                    <li class="col-md-2 col-sm-4 col-xs-6">
+                        <h4>I came from a family of eight brothers and sisters which I'm the youngest. Living in such a big family thought me how to handle with people, be patient and teamwork.</h4>
+                        
+                    </li>
+                    <li class="col-md-2 col-sm-4 col-xs-6">
+                        <h4> I have a dog and also a cat. Their names are Cardo and Ginger.</h4>
+                        
+                    </li>
+                </ul><!-- numbersList end -->
+            </div><!-- container-fluid end -->
+        </div><!-- overlay end -->
+    </div>
+</div>
+{% endblock %}
+
