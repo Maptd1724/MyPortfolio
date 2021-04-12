@@ -2,6 +2,8 @@
 
 {% load static %}
 
+{% block title %} Works {% endblock %}
+
 {% block content %}
 <div class="content-block text-center" id="portfolio">
     <header class="block-heading cleafix">
@@ -11,6 +13,7 @@
     <div class="portfolio-works wow fadeIn" data-wow-duration="2s">
 
         <!-- Filter Button Start -->
+        
         <div id="portfolio-filter" class="portfolio-filter-btn-group">    
     <div class="isotope portfolio-items">
         {% for work in works %}
@@ -32,4 +35,5 @@
     </div>
 </div>
 </div>
+
 {% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact {% endblock %}
+
+
+{% block content %}
+<div class="content-block" id="contact">
+    <div class="overlay-3">
+        <header class="block-heading cleafix text-center">
+            <h1>Contact</h1>
+            <!-- <p>Feel Free to Contact</p> -->
+        </header>
+         
+        <div class="block-content text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 wow animated fadeInLeft">
+
+                        {% include 'partials/_alerts.html' %} 
+
+                        <form class="{% url 'contact' %}" method="POST">
+                            {% csrf_token %}
+                            {% if user.is_authenticated %}
+                                <input type="hidden" name="user_id" value="{{ user.id }}">
+                            {% else %}
+                            <input type="hidden" name="user_id" value="0">
+                            {% endif %}                 
+                                <input type="text" name="name" placeholder="Name" {% if user.is_authenticated %} {% endif %} value="{{ user.name }}" required>
+                                <input type="email" name="email" placeholder="Email" {% if user.is_authenticated %} {% endif %} value="{{ user.email }}" required>
+                                <textarea rows="5" name="message" placeholder="Say Something..." {% if user.is_authenticated %} {% endif %} value="{{ user.message }}" required></textarea>
+                                <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                    <div class="col-md-6 wow animated fadeInRight">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="contact-info">
+                                    <div class="clearfix">
+                                        <div class="rotated-icon">
+                                            <div class="sqaure-nebir"></div>
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <p><strong> Address:</strong> Mitvza Kadesh 43, Tel Aviv Yaffo.
+                                        </p>
+                                    </div>
+                                    <div class="clearfix">
+                                        <div class="rotated-icon">
+                                            <div class="sqaure-nebir"></div>
+                                            <i class="fa fa-mobile"></i>
+                                        </div>
+                                        <p><strong> Cell No:</strong> 054-3965-536 </p>
+                                    </div>
+                                    <div class="clearfix">
+                                        <div class="rotated-icon">
+                                            <div class="sqaure-nebir"></div>
+                                            <i class="fa fa-envelope-o"></i>
+                                        </div>
+                                        <p>
+                                            <strong> Email:</strong> maryann.deutel@gmail.com
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <ul class="social-box">
+                                <li><a class="facebook-icon" href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a class="twitter-icon" href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a class="g-plus-icon" href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a class="linkedin-icon" href="#"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>	<!-- block-content -->
+    </div>	<!-- overlay-3 -->
+</div>	<!-- content-block -->
+{% endblock %}
